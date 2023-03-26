@@ -11,8 +11,19 @@ addToTwelve([1, 11, 4, 7, 6]); // true
 addToTwelve([1, 12, 4, 7, 6]); // false
 addToTwelve([1]); // false
 ***********************************************************************/
+function addToTwelve(arr, i = 0, cur = 0) {
+  // base case
+  if (i >= arr.length) {
+    return false;
+  }
 
-// your code here
+  if (cur + arr[i] === 12) {
+    return true
+  }
+
+  // recurse case
+  return addToTwelve(arr, i+1, cur = arr[i]);
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

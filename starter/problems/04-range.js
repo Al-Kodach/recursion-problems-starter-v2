@@ -10,9 +10,22 @@ range(3, 4); // [3]
 range(7, 6); // []
 ***********************************************************************/
 
+function range(start, end) {
+  // if end is greater than start, we return an empty array
+  if (end < start) return [];
 
-// your code here
+  debugger
+  // base case: if start == end return
+  if (start >= end) {
+    return [];
+  }
 
+  console.log(start)
+
+  // recurse case
+return [start, ...range(start + 1, end)]
+
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

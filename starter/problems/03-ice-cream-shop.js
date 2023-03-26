@@ -6,14 +6,27 @@ offers their favorite flavor.
 
 Examples:
 iceCreamShop(['vanilla', 'strawberry'], 'blue moon'); // false
-iceCreamShop(['pistachio', 'green tea', 'chocolate', 'mint chip'], 'green tea'); // true
-iceCreamShop(['cookies n cream', 'blue moon', 'superman', 'honey lavender', 'sea salt caramel'], 'pistachio'); // false
 iceCreamShop(['moose tracks'], 'moose tracks'); // true
+iceCreamShop(['cookies n cream', 'blue moon', 'superman', 'honey lavender', 'sea salt caramel'], 'pistachio'); // false
 iceCreamShop([], 'honey lavender'); // false
 ***********************************************************************/
 
+function iceCreamShop(flavors, favorite, i = 0) {
+  // if current element is equal favorite element return true
+  if (flavors[i] === favorite) {
+    return true;
+  }
 
-// your code here
+  // base case
+  if (i >= flavors.length) {
+    return false;
+  }
+
+  // else recurse
+  return iceCreamShop(flavors, favorite, i+1);
+}
+
+iceCreamShop(['pistachio', 'green tea', 'chocolate', 'mint chip'], 'green tea'); // true
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

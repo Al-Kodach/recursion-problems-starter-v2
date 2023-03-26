@@ -11,8 +11,17 @@ reverse("q"); // "q"
 reverse("id"); // "di"
 reverse(""); // ""
 ***********************************************************************/
+function reverse(string) {
+  // base case: if str is empty we return empty str;
+  if(string === '') {
+    return '';
+  }
 
-// your code here
+  // recurse case: slice from second element to end
+  // add first element to slice elements
+  return reverse(string.slice(1)) + string[0];
+}
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
