@@ -18,13 +18,23 @@ fibonacci(3); // 2
 fibonacci(4); // 3
 fibonacci(10); // 55
 ***********************************************************************/
+function fibonacci(n, fibArray = [0, 1]) {
+  // base case:
+  if (fibArray.length > n) return fibArray[n];
 
-// your code here
-  
+  // grab last and second to last numbers in the fibArray
+  let lastNum = fibArray.at(-1);
+  let secondToLastNum = fibArray.at(-2);
+
+  // recall fib Func and pass in n,
+  // concat fibArray to the sum of last and second to last number;
+  return fibonacci(n, fibArray = [...fibArray, ...[lastNum + secondToLastNum]]);
+
+}
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = fibonacci;
 } catch (e) {
   module.exports = null;
 }
-  

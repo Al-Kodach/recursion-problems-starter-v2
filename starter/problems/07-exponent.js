@@ -20,20 +20,26 @@ exponent(2, -2); // 1/4 (or 0.25)
 exponent(5, 5); // 3125
 ***********************************************************************/
 
-function exponent(b, n, i = 0) {
+function exponent(b, n) {
+  // if n is a negative number
   if (n < 0) {
+    // multiple n by -1
+    // n only gives number of times b will multiply itself
     n = -1 * n;
+    // convert b to a fraction of 1 out of itself
     b = 1/b;
   }
 
-  // base case
-  if (i == n) {
+  // base case: if n is equal to zero we return 1
+  // number * 1 = number
+  if (n == 0) {
     return 1;
   }
 
- return b * exponent(b, n, i+1);
+// multiply b by itself n times
+ return b * exponent(b, n - 1,);
 }
-exponent(2, -2); // 1/4 (or 0.25)
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = exponent;
